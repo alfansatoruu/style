@@ -26,7 +26,7 @@ const App = () => {
         </div>
 
 
-        <h1 className="animated-text">Node Alvan</h1>
+        <p id="node-alvan" className="animated-text">Node Alvan</p>
         <p className="animated-text">Scroll down to rotate the Camera</p>
 
         {/* menu */}
@@ -35,7 +35,7 @@ const App = () => {
 
         <div className="audio-container">
           <audio id="audio" autoPlay loop>
-            <source src="music/yve.mp3" type="audio/mp3" />
+            <source src="music/Billie_Eilish_-_Hotline_Bling__instrumental_a_slowed__[_YouConvert.net.mp3" type="audio/mp3" />
           </audio>
         </div>
       </div>
@@ -44,7 +44,6 @@ const App = () => {
         <h2 className="animated-text">私について</h2>
         <h2 className="animated-text">About Me</h2>
         <div className='column'>
-
           <p className="animated-text">
             I am a passionate Mobile and Web Developer with experience in building responsive websites and user-friendly mobile applications. I specialize in creating innovative solutions that deliver seamless digital experiences.
           </p>

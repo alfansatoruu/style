@@ -11,8 +11,8 @@
 
 .menuToggle {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background-color: #fff;
     border-radius: 50%; /* Ensure perfect circle */
     cursor: pointer;
@@ -53,7 +53,7 @@
     width: 400px;
     height: 50px;
     z-index: 1;
-    transform: translateY(-60px);
+    transform: translateY(-27vh);
     transition-delay: 0s, 0.5s, 0.5s;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
 }
@@ -65,7 +65,7 @@
     height: 16px;
     left: 50%;
     bottom: 4px;
-    transform: rotate(45deg) translateX(-50%);
+    transform: rotate(45deg) translateY(-30%);
     border-radius: 2px;
     transition: 0.5s;
 }
@@ -91,7 +91,7 @@
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-60px);
+    transform: translateY(-100vh);
     transition: 0.25s;
     transition-delay: calc(0s + var(--i));
 }
