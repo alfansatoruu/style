@@ -1,0 +1,168 @@
+/* Media Queries */
+
+/* Untuk perangkat dengan lebar di bawah 480px */
+@media (max-width: 480px) {
+    .section {
+      padding: 10px;
+      min-height: 90vh;
+    }
+  
+    .column,
+    .column2 {
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  
+    .gallery {
+      --s: 100px;
+      grid: auto-flow var(--s) / repeat(1, var(--s));
+      margin: 0;
+      transform: rotate(0deg);
+    }
+  
+    .gallery > img {
+      width: 100%;
+      transform: scale(var(--_t, 1)) rotate(0deg);
+    }
+  
+    .timeline-content h3 {
+      font-size: 20px;
+    }
+  
+    .input-group input,
+    .input-group textarea {
+      font-size: 0.8rem;
+      padding: 10px;
+    }
+  
+    .animated-text {
+      font-size: 1rem;
+    }
+  
+    form {
+      width: 95%;
+      padding: 15px;
+    }
+  }
+  
+  /* Untuk perangkat dengan lebar antara 481px dan 500px */
+  @media (min-width: 481px) and (max-width: 500px) {
+    .menuToggle {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .menuToggle::before {
+      font-size: 2.5em;
+    }
+  
+    .menu {
+      width: 300px;
+      height: 40px;
+    }
+  
+    .menu ul {
+      gap: 30px;
+    }
+  
+    .menu ul li a {
+      font-size: 13px;
+      padding: 8px;
+    }
+  
+    .menu ul li a i {
+      font-size: 14px;
+    }
+  }
+  
+  /* Untuk perangkat dengan lebar antara 501px dan 768px */
+  @media (min-width: 501px) and (max-width: 768px) {
+    .menuToggle {
+      width: 45px;
+      height: 45px;
+    }
+  
+    .menuToggle::before {
+      font-size: 2.7em;
+    }
+  
+    .menu {
+      width: 350px;
+      height: 45px;
+    }
+  
+    .menu ul {
+      gap: 40px;
+    }
+  
+    .menu ul li a {
+      font-size: 14px;
+      padding: 9px;
+    }
+  
+    .menu ul li a i {
+      font-size: 15px;
+    }
+  }
+  
+  /* Untuk perangkat dengan lebar antara 769px dan 1024px */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .menuToggle {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .menuToggle::before {
+      font-size: 3em;
+    }
+  
+    .menu {
+      width: 380px;
+      height: 50px;
+    }
+  
+    .menu ul {
+      gap: 50px;
+    }
+  
+    .menu ul li a {
+      font-size: 15px;
+      padding: 10px;
+    }
+  
+    .menu ul li a i {
+      font-size: 16px;
+    }
+  }
+  
+  /* Untuk perangkat dengan lebar di atas 1024px */
+  @media (min-width: 1025px) {
+    .menuToggle {
+      width: 55px;
+      height: 55px;
+    }
+  
+    .menuToggle::before {
+      font-size: 3.2em;
+    }
+  
+    .menu {
+      width: 400px;
+      height: 55px;
+    }
+  
+    .menu ul {
+      gap: 60px;
+    }
+  
+    .menu ul li a {
+      font-size: 16px;
+      padding: 12px;
+    }
+  
+    .menu ul li a i {
+      font-size: 17px;
+    }
+  }
+  
