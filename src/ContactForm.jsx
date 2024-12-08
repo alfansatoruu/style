@@ -1,4 +1,4 @@
-// ContactForm.js
+
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
 
@@ -19,44 +19,24 @@ const ContactForm = () => {
   };
 
   return (
-    <div>
-      <h2 className="animated-text">Contact Me</h2> {/* Teks animasi */}
+    <div className="section section-4">
+      <h2 className="animated-text">Contact Me</h2>
       <form id="contactForm" onSubmit={sendEmail}>
         <div className="input-group">
           <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your Name"
-            required
-          />
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
         </div>
         <div className="input-group">
           <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Your Email"
-            required
-          />
+          <input type="email" id="email" name="email" placeholder="Your Email" required />
         </div>
         <div className="input-group">
           <label htmlFor="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Your Message"
-            rows="4"
-            required
-          />
+          <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
         </div>
         <button type="submit">Submit</button>
       </form>
-      {confirmationMessage &&
-        <p id="confirmationMessage" className="message">{confirmationMessage}</p>
-      }
+      {confirmationMessage && <p id="confirmationMessage" className="message">{confirmationMessage}</p>}
     </div>
   );
 };
