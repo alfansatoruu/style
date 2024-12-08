@@ -11,7 +11,7 @@ const ContactForm = () => {
     e.preventDefault();
 
 
-    emailjs.sendForm('service_2gfv57d', 'template_h16qo7k', e.target)
+    emailjs.sendForm('service_2gfv57d', 'template_n44fqg7', e.target)
       .then((result) => {
         console.log('Message Sent:', result);
         setConfirmationMessage("Your message has been sent successfully!");
