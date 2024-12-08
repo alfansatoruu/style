@@ -1,20 +1,23 @@
-
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
   const [confirmationMessage, setConfirmationMessage] = useState("");
 
+
+  emailjs.init('UCKKih5IQspVduNdt');
+
   const sendEmail = (e) => {
     e.preventDefault();
 
 
-    emailjs.sendForm('service_2gfv57d', 'template_h16qo7k', e.target, 'UCKKih5IQspVduNdt')
+    emailjs.sendForm('service_2gfv57d', 'template_h16qo7k', e.target)
       .then((result) => {
-        console.log('Message Sent:', result.text);
+        console.log('Message Sent:', result);
         setConfirmationMessage("Your message has been sent successfully!");
-      }, (error) => {
-        console.log('Error:', error.text);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
         setConfirmationMessage("There was an error sending your message. Please try again later.");
       });
   };
