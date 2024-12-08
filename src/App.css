@@ -415,10 +415,11 @@ button:active {
   }
 }
 
+/* Targeting devices with width 738.40px */
 @media (max-width: 738.40px) {
   .section {
     padding: 15px;
-    min-height: 90vh;  /* Adjust the height if needed */
+    min-height: 90vh;
   }
 
   .column,

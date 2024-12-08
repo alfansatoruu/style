@@ -16,13 +16,14 @@ class ObjectManager {
     );
     this.camera.position.z = 5;
 
+    // Mengoptimalkan penggunaan antialias dan pixel ratio untuk perangkat mobile
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
-      antialias: true,
+      antialias: false, // Mengurangi beban dengan mematikan antialias
       alpha: true,
     });
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio to avoid performance issues
-    this.renderer.setSize(window.innerWidth * 0.75, window.innerHeight * 0.75); // Lower resolution on mobile
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Membatasi pixel ratio
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
 
     this.object = null;
     this.mixer = null;
@@ -49,7 +50,7 @@ class ObjectManager {
     setupLights(this.scene);
     this.loadObject();
     this.animate();
-    window.addEventListener('scroll', this.throttleScroll.bind(this));
+    window.addEventListener('scroll', this.handleScroll.bind(this));
     window.addEventListener('resize', this.updateRendererSize.bind(this));
   }
 
@@ -109,18 +110,10 @@ class ObjectManager {
     this.object.rotation.y = angle;
   }
 
-  throttleScroll() {
-    const now = Date.now();
-    if (now - this.lastScroll > 50) { // Throttle scroll events
-      this.lastScroll = now;
-      this.handleScroll();
-    }
-  }
-
   updateRendererSize() {
     this.camera.aspect = window.innerWidth / window.innerHeight;
     this.camera.updateProjectionMatrix();
-    this.renderer.setSize(window.innerWidth * 0.75, window.innerHeight * 0.75); // Adjust size for mobile
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
   animate() {
@@ -133,7 +126,7 @@ class ObjectManager {
   }
 
   cleanup() {
-    window.removeEventListener('scroll', this.throttleScroll);
+    window.removeEventListener('scroll', this.handleScroll);
     window.removeEventListener('resize', this.updateRendererSize);
   }
 }
