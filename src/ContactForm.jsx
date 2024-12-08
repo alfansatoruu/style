@@ -8,12 +8,13 @@ const ContactForm = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_2gfv57d', '__ejs-test-mail-service__', e.target, 'UCKKih5IQspVduNdt')
+
+    emailjs.sendForm('service_2gfv57d', 'template_h16qo7k', e.target, 'UCKKih5IQspVduNdt')
       .then((result) => {
-        console.log(result.text);
+        console.log('Message Sent:', result.text);
         setConfirmationMessage("Your message has been sent successfully!");
       }, (error) => {
-        console.log(error.text);
+        console.log('Error:', error.text);
         setConfirmationMessage("There was an error sending your message. Please try again later.");
       });
   };
