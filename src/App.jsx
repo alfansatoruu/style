@@ -62,7 +62,8 @@ const App = () => {
           <div className="card">
             <div className="gallery">
               <img src="album/fotoku.png" alt="Profile" />
-              <img src="album/coding3.png" alt="Profile" />
+              <img src="album/kiri.jpg" alt="Profile" />
+              <img src="album/kanan.jpg" alt="Profile" />
               <img src="album/coding2.png" alt="Profile" />
             </div>
           </div>

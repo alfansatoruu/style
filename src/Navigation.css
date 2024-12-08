@@ -53,7 +53,7 @@
     align-items: center;
     justify-content: center;  /* Untuk menempatkan menu di tengah secara horizontal */
     display: flex;
-    width: 390px;
+    width: 350px;
     height: 50px;
     z-index: 1;
     transform: translateY(-27vh);
@@ -86,7 +86,7 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    gap: 50px;
+    gap: 20px;
 }
 
 .menu ul li {

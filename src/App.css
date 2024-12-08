@@ -51,6 +51,7 @@ html {
   border-radius: 8px;
 }
 
+
 .section {
   position: relative;
   width: 100%;
@@ -96,9 +97,14 @@ html {
   text-align: center;
   margin: 0 auto;
 }
+.container-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 
 .gallery {
-  --s: 150px;
+  --s: 200px;
   display: grid;
   grid: auto-flow var(--s) / repeat(2, var(--s));
   gap: 10px;
