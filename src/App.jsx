@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import ObjectManager from './ObjectManager';
+import NavigationMenu from './NavigationMenu';
+
 
 const App = () => {
   const canvasRef = useRef(null);
-  const [menuActive, setMenuActive] = useState(false);
 
   useEffect(() => {
     const manager = new ObjectManager(canvasRef.current);
@@ -14,10 +15,6 @@ const App = () => {
     };
   }, []);
 
-  const toggleMenu = () => {
-    setMenuActive(!menuActive);
-  };
-
   return (
     <div className="stack">
 
@@ -25,22 +22,17 @@ const App = () => {
       <div className="section section-1">
         <div id="loading-screen">
           <div id="loading-spinner"></div>
-          Loading...
+          <p>Memuat data...</p>
         </div>
+
 
         <h1 className="animated-text">Node Alvan</h1>
         <p className="animated-text">Scroll down to rotate the Camera</p>
-        <div class="navigation">
-          <div class="menuToggle"></div>
-          <div class="menu">
-            <ul>
-              <li style="--i: 0.1s;"><a href="#home">Home</a></li>
-              <li style="--i: 0.2s;"><a href="#about">About</a></li>
-              <li style="--i: 0.3s;"><a href="#services">Services</a></li>
-              <li style="--i: 0.4s;"><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-        </div>
+
+        {/* menu */}
+        <NavigationMenu />
+
+
         <div className="audio-container">
           <audio id="audio" autoPlay loop>
             <source src="music/yve.mp3" type="audio/mp3" />
