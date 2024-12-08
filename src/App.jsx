@@ -21,8 +21,10 @@ const App = () => {
 
       <div className="section section-1">
         <div id="loading-screen">
-          <div id="loading-spinner"></div>
-          <p>Memuat data...</p>
+          <div className='container-loading'>
+            <div id="loading-spinner"></div>
+            <p>Memuat data...</p>
+          </div>
         </div>
 
 
