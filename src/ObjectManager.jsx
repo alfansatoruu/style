@@ -21,8 +21,8 @@ class ObjectManager {
       antialias: true,
       alpha: true,
     });
-    this.renderer.setPixelRatio(window.devicePixelRatio);
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio to avoid performance issues
+    this.renderer.setSize(window.innerWidth * 0.75, window.innerHeight * 0.75); // Lower resolution on mobile
 
     this.object = null;
     this.mixer = null;
@@ -30,7 +30,6 @@ class ObjectManager {
     this.currentAction = null;
     this.actions = [];
 
-    // Loading Manager
     this.loadingManager = new THREE.LoadingManager();
     this.loadingManager.onStart = () => {
       this.showLoading(true);
@@ -50,7 +49,7 @@ class ObjectManager {
     setupLights(this.scene);
     this.loadObject();
     this.animate();
-    window.addEventListener('scroll', this.handleScroll.bind(this));
+    window.addEventListener('scroll', this.throttleScroll.bind(this));
     window.addEventListener('resize', this.updateRendererSize.bind(this));
   }
 
@@ -61,7 +60,7 @@ class ObjectManager {
       (gltf) => {
         this.object = gltf.scene;
         this.object.scale.set(40, 40, 40);
-        this.camera.position.set(0, 45, 30); // Naikkan kamera di sumbu Y
+        this.camera.position.set(0, 45, 30);
 
         this.scene.add(this.object);
 
@@ -87,9 +86,9 @@ class ObjectManager {
   showLoading(show) {
     const loaderElement = document.getElementById('loading-screen');
     if (show) {
-      loaderElement.style.display = 'flex'; // Show the loading screen
+      loaderElement.style.display = 'flex';
     } else {
-      loaderElement.style.display = 'none'; // Hide the loading screen
+      loaderElement.style.display = 'none';
     }
   }
 
@@ -104,17 +103,24 @@ class ObjectManager {
     const angle = scrollPercent * Math.PI * 2;
     const radius = 2;
 
-    // Circular positioning using trigonometry
     this.object.position.x = Math.sin(angle) * radius;
     this.object.position.y = Math.cos(angle - Math.PI / 2) * radius;
 
     this.object.rotation.y = angle;
   }
 
+  throttleScroll() {
+    const now = Date.now();
+    if (now - this.lastScroll > 50) { // Throttle scroll events
+      this.lastScroll = now;
+      this.handleScroll();
+    }
+  }
+
   updateRendererSize() {
     this.camera.aspect = window.innerWidth / window.innerHeight;
     this.camera.updateProjectionMatrix();
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setSize(window.innerWidth * 0.75, window.innerHeight * 0.75); // Adjust size for mobile
   }
 
   animate() {
@@ -127,7 +133,7 @@ class ObjectManager {
   }
 
   cleanup() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.throttleScroll);
     window.removeEventListener('resize', this.updateRendererSize);
   }
 }
