@@ -16,13 +16,13 @@ class ObjectManager {
     );
     this.camera.position.z = 5;
 
-    // Mengoptimalkan penggunaan antialias dan pixel ratio untuk perangkat mobile
+    
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
-      antialias: false, // Mengurangi beban dengan mematikan antialias
-      alpha: true,
+      antialias: false, 
+      alpha: false,
     });
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Membatasi pixel ratio
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); 
     this.renderer.setSize(window.innerWidth, window.innerHeight);
 
     this.object = null;
@@ -57,11 +57,11 @@ class ObjectManager {
   loadObject() {
     const loader = new GLTFLoader(this.loadingManager);
     loader.load(
-      'terbaru.glb',
+      'buddha_statues.glb',
       (gltf) => {
         this.object = gltf.scene;
-        this.object.scale.set(40, 40, 40);
-        this.camera.position.set(0, 45, 30);
+        this.object.scale.set(1, 1, 1);
+        this.camera.position.set(0,240, 210);
 
         this.scene.add(this.object);
 
