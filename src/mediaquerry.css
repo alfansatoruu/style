@@ -19,13 +19,10 @@
     text-align: center;
   }
 
-
-
-
   .gallery {
     align-items: center;
     justify-content: center;
-    --s: 100px;
+    --s: 200px;
     grid: auto-flow var(--s) / repeat(1, var(--s));
     margin: 0;
     transform: rotate(0deg);
@@ -132,7 +129,7 @@
   }
 
   .menu ul {
-    gap: 40px;
+    gap: 40pxa;
   }
 
   .menu ul li a {
