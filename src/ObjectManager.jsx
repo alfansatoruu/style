@@ -16,7 +16,6 @@ class ObjectManager {
     );
     this.camera.position.z = 5;
 
-
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
       antialias: false,
@@ -31,6 +30,7 @@ class ObjectManager {
     this.currentAction = null;
     this.actions = [];
 
+    // Setup loading manager
     this.loadingManager = new THREE.LoadingManager();
     this.loadingManager.onStart = () => {
       this.showLoading(true);
@@ -39,7 +39,8 @@ class ObjectManager {
       this.showLoading(false);
     };
     this.loadingManager.onProgress = (url, itemsLoaded, itemsTotal) => {
-      console.log(`Loading: ${url}, ${itemsLoaded} / ${itemsTotal}`);
+      const percentage = (itemsLoaded / itemsTotal) * 100;
+      this.updateLoadingPercentage(percentage);
     };
     this.loadingManager.onError = (url) => {
       console.error(`Error loading: ${url}`);
@@ -93,6 +94,11 @@ class ObjectManager {
     }
   }
 
+  updateLoadingPercentage(percentage) {
+    const loaderPercentageElement = document.getElementById('loading-percentage');
+    loaderPercentageElement.textContent = `${Math.round(percentage)}%`;
+  }
+
   handleScroll() {
     if (!this.object) return;
 
@@ -130,6 +136,5 @@ class ObjectManager {
     window.removeEventListener('resize', this.updateRendererSize);
   }
 }
-
 
 export default ObjectManager;

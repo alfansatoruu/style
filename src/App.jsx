@@ -22,11 +22,13 @@ const App = () => {
 
       <div className="section section-1">
         <div id="loading-screen">
-          <div className='container-loading'>
-            <div id="loading-spinner"></div>
+          <div className="container-loading">
             <p>Memuat data...</p>
+            <p id="loading-percentage">0%</p>
           </div>
         </div>
+
+
 
 
         <p id="node-alvan" className="animated-text">Node Alvan</p>
