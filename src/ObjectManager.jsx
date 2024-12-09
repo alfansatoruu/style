@@ -102,17 +102,21 @@ class ObjectManager {
   handleScroll() {
     if (!this.object) return;
 
+    // Get the scroll position and calculate the scroll percentage
     const scrollY = window.scrollY;
     const scrollHeight = document.documentElement.scrollHeight;
     const viewportHeight = window.innerHeight;
     const scrollPercent = scrollY / (scrollHeight - viewportHeight);
 
+    // Calculate the position and rotation based on the scroll percentage
     const angle = scrollPercent * Math.PI * 2;
     const radius = 2;
 
+    // Smoothly update the object position using scroll
     this.object.position.x = Math.sin(angle) * radius;
     this.object.position.y = Math.cos(angle - Math.PI / 2) * radius;
 
+    // Smoothly rotate the object based on scroll
     this.object.rotation.y = angle;
   }
 
