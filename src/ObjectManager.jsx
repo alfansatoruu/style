@@ -16,13 +16,13 @@ class ObjectManager {
     );
     this.camera.position.z = 5;
 
-    
+
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
-      antialias: false, 
+      antialias: false,
       alpha: false,
     });
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); 
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.setSize(window.innerWidth, window.innerHeight);
 
     this.object = null;
@@ -61,7 +61,7 @@ class ObjectManager {
       (gltf) => {
         this.object = gltf.scene;
         this.object.scale.set(1, 1, 1);
-        this.camera.position.set(0,240, 210);
+        this.camera.position.set(0, 300, 580);
 
         this.scene.add(this.object);
 
@@ -130,5 +130,6 @@ class ObjectManager {
     window.removeEventListener('resize', this.updateRendererSize);
   }
 }
+
 
 export default ObjectManager;

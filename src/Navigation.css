@@ -11,8 +11,8 @@
 
 .menuToggle {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background-color: #fffffff6;
     border-radius: 50%; /* Ensure perfect circle */
     cursor: pointer;

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
-/* Global styles */
 
 body,
 html {
@@ -26,7 +25,9 @@ html {
 }
 
 .section.section-2 {
- background: rgba(220, 153, 214, 0.6);
+  background: rgba(255, 255, 255, 0.121);
+
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -75,7 +76,9 @@ html {
 }
 
 .section-3 {
- background: rgba(220, 153, 214, 0.6);
+  background: rgba(255, 255, 255, 0.121);
+
+
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -96,6 +99,7 @@ html {
   text-align: center;
   margin: 0 auto;
 }
+
 .container-image {
   display: flex;
   justify-content: center;
@@ -202,7 +206,8 @@ html {
   text-align: start;
   width: 100%;
   min-height: 100vh;
-  background: rgba(220, 153, 214, 0.6);
+  background: rgba(255, 255, 255, 0.121);
+
   display: flex;
   justify-content: center;
   align-items: center;

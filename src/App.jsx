@@ -101,7 +101,7 @@ const App = () => {
           </div>
         </div>
       </div>
-      <ContactForm /> {/* komponen ContactForm */}
+      <ContactForm /> {/*  komponen ContactForm */}
 
       <canvas ref={canvasRef} className="canvas" />
     </div>
