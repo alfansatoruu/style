@@ -191,8 +191,9 @@ html {
 }
 
 .timeline-content span {
-  font-size: 15px;
-  color: #062e84;
+  font-weight: bold;
+  font-size: 25px;
+  color: #fd31db;
 }
 
 .timeline-content p {
